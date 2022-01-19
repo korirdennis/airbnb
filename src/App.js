@@ -11,7 +11,8 @@ function App() {
       <Navbar/>
       <Hero/>
       <Card
-          img="/Zarefes.png"	
+
+          img='http://placekitten.com/200/300'
           rating={4}
           reviewCount={6}
           country="USA"
@@ -20,6 +21,18 @@ function App() {
 
       
       />
+      <Card
+
+        img='http://placekitten.com/g/200/300'
+        rating={5}
+        reviewCount={10}
+        country="USA"
+        price={135}
+        title="The best place to stay in the world"
+
+
+        />
+
       <Test/>
       <div className='contacts'>
         <Contact
