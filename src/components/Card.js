@@ -3,7 +3,7 @@ import Zarefes from '../images/Zarefes.png'
 import Stats from '../images/stats.png'
 
 function Card(props) {
-    console.log(props)
+    
 
     return (
         <div className='card'>

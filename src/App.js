@@ -2,14 +2,39 @@ import './App.css';
 import Card from './components/Card';
 import Contact from './components/Contact';
 import Hero from './components/Hero';
+import Joke from './components/Joke';
 import Navbar from './components/Navbar';
 import Test from './components/Test';
 
+import JokesData from '../src/JokesData';
+import Contacts from './components/Contacts';
+import ContactDetails from '../src/ContactDetailsData';
+
 function App() {
+
+
+   const JokeElements = JokesData.map(joke => {
+     return <Joke     
+     setup={joke.setup} 
+     punchline={joke.punchline} />  
+    });
+
+    const contactElements = ContactDetails.map(contact => {
+      return <Contacts
+      name={contact.name}
+      age={contact.age}
+      city={contact.city}
+      Country={contact.Country}
+      />  
+    });
+
+
+
   return (
     <div className="App">
       <Navbar/>
       <Hero/>
+      
       <Card
 
           img='http://placekitten.com/200/300'
@@ -65,6 +90,8 @@ function App() {
         />
 
       </div>
+      {JokeElements}
+      {contactElements}
     </div>
   );
 }
