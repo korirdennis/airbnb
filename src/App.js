@@ -10,7 +10,16 @@ function App() {
     <div className="App">
       <Navbar/>
       <Hero/>
-      <Card/>
+      <Card
+          img="/Zarefes.png"	
+          rating={4}
+          reviewCount={6}
+          country="USA"
+          price={100}
+          title="The best place to stay"
+
+      
+      />
       <Test/>
       <div className='contacts'>
         <Contact
