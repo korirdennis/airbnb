@@ -10,8 +10,43 @@ import JokesData from '../src/JokesData';
 import Contacts from './components/Contacts';
 import ContactDetails from '../src/ContactDetailsData';
 
+import CardData from '../src/data';
+import User from './components/User';
+import usersData from '../src/usersData';
+
+
 function App() {
 
+  const UserDataElements = usersData.map(user => {
+    return (
+      <User
+        key={user.id}
+        name={user.name}
+        username={user.username}
+        email={user.email}
+        address={user.address.street}
+        phone={user.phone}
+        website={user.website}
+        company={user.company.name}
+        catchPhrase={user.company.catchPhrase}
+
+      />
+    )
+  });
+
+
+
+  const CardDataElements = CardData.map(card => {
+    return <Card 
+                key={card.id}
+                img={card.coverImage}
+                rating={card.stats.rating}
+                reviewCount={card.stats.reviewCount}
+                country={card.location}
+                price={card.price}
+            />
+  }); 
+  
 
    const JokeElements = JokesData.map(joke => {
      return <Joke     
@@ -92,6 +127,8 @@ function App() {
       </div>
       {JokeElements}
       {contactElements}
+      {CardDataElements}
+      {UserDataElements}
     </div>
   );
 }
